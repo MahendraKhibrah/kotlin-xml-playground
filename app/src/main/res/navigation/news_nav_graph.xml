@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/news_nav_graph"
+    app:startDestination="@id/articleFragment">
+
+    <fragment
+        android:id="@+id/articleFragment"
+        android:name="com.pens.xmlplayground.ui.fragment.ArticleFragment"
+        android:label="ArticleFragment" >
+        <action
+            android:id="@+id/action_articleFragment_to_breakingNewsFragment2"
+            app:destination="@id/breakingNewsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/breakingNewsFragment"
+        android:name="com.pens.xmlplayground.ui.fragment.BreakingNewsFragment"
+        android:label="BreakingNewsFragment" >
+        <action
+            android:id="@+id/action_breakingNewsFragment_to_articleFragment"
+            app:destination="@id/articleFragment" />
+        <argument
+            android:name="name"
+            app:argType="string"
+            android:defaultValue='""' />
+        <argument
+            android:name="age"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+</navigation>
